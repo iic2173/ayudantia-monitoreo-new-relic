@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/ping", (req, res) => {
-  newrelic.incrementMetric('Custom/Ping/NumberOfCalls', 1);
+  newrelic.incrementMetric('Ping/NumberOfCalls', 1);
   res.send("Pong");
 });
 
