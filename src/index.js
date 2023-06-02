@@ -6,7 +6,7 @@ const app = express();
 
 dotenv.config();
 
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT);
 app.set("json spaces", 2);
 
 app.use(express.urlencoded({extended:false}));
@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/ping", (req, res) => {
-  newrelic.incrementMetric('Ping/NumberOfCalls', 1);
+  newrelic.incrementMetric('Custom/Ping/NumberOfCalls', 1);
   res.send("Pong");
 });
 
